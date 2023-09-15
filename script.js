@@ -5,8 +5,7 @@ const options = {
         'X-RapidAPI-Key': 'cc1b422770msh742f7efcee5f86cp1f8e74jsn07d27a8e6fda',
         'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
     }
-};
-
+}
 
 const getWeather = (city) => {
 
@@ -21,8 +20,8 @@ const getWeather = (city) => {
             feels_like.innerHTML = response.feels_like
             humidity.innerHTML = response.humidity
             humidityB.innerHTML = response.humidity
-            min_temp.innerHTML = response.min_temp - 2
-            max_temp.innerHTML = response.max_temp + 3
+            min_temp.innerHTML = response.min_temp 
+            max_temp.innerHTML = response.max_temp 
             wind_speed.innerHTML = response.wind_speed
             windB.innerHTML = response.wind_speed
             wind_degrees.innerHTML = response.wind_degrees
@@ -43,23 +42,36 @@ submit.addEventListener("click", (e) => {
     getWeather(city.value)
 })
 
-const getWeatherForOtherCities = (city,) =>{
+const getWeatherForOtherCities = (cities) =>{
 
-    fetch(url + city, options)
+    for (let i=1; i<5; i++){
+
+        console.log(cities[i])
+                
+    
+
+    fetch(url + cities[i-1], options)
         .then(response => response.json())
         .then(response => {
-            console.log(1)
-            document.getElementById("temp1").innerHTML = response.temp
+           
+            document.getElementById("temp"+i).innerHTML = response.temp
+            document.getElementById("feels"+i).innerHTML = response.feels_like
+            document.getElementById("humid"+i).innerHTML = response.humidity
+            document.getElementById("wind"+i).innerHTML = response.wind_speed
+            document.getElementById("degree"+i).innerHTML = response.wind_degrees
+            document.getElementById("set"+i).innerHTML = response.sunset
+            document.getElementById("rise"+i).innerHTML = response.sunrise
 
         })
         .catch(error => {
             console.error(error);
-        });
+        })}
 }
 
-getWeatherForOtherCities("toronto")
+getWeatherForOtherCities(["toronto", "vancouver", "edmonton", "winnipeg"])
 
-console.log(getWeather("Gander").temp)
+getWeather("Gander")
+
 
 // getWeatherForOtherCities("toronto")
 

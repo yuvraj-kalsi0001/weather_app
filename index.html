@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather APP</title>
+    <link rel="icon" href="weather-forecast.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Weather APP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About this app</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">St. John's</a></li>
+                    <li><a class="dropdown-item" href="#">Gander</a></li>
+                    <li><a class="dropdown-item" href="#">Corner Brook</a></li>
+                  </ul>
+                
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" id= "city" type="search" placeholder="Enter City" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <body data-new-gr-c-s-check-loaded="14.1123.0" data-gr-ext-installed="">
+          
+        <div class="container py-3">
+          <header>
+            <div >
+                <h1 class="my-4 text-center" >Weather for <span id="cityName"></span></h1>
+              
+
+            </div>
+          </header>
+        
+          <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Tempratures</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 ><span id="tempB"></span><small class="fw-light">&deg;C</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Temprature is <span id="temp"></span>&deg;C</li>
+                      <li>Min temprature is <span id="min_temp"></span></li>
+                      <li>Max temprature is <span id="max_temp"></span></li>
+                    </ul>
+                    
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Humidity</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 ><span id="humidityB"></span><small class="fw-light"> g.m<sup>-3</sup></small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                      <li>Feels like <span id="feels_like"></span></li>
+                      <li>Humidity <span id="humidity"></span></li>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Wind</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 ><span id="windB"></span><small class="fw-light"> KM/hr</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Wind speed is <span id="wind_speed"></span></li>
+                        <li>Wind degree is <span id="wind_degrees"></span></li>
+                        <li>Sunrise time is <span id="sunrise"></span></li>
+                        <li>Sunset time is <span id="sunset"></span></li>
+                    </ul>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="display-6 text-center mb-4">Other cities</h2>
+        
+            <div class="table-responsive">
+              <table class="table text-center">
+                <thead>
+                  <tr style="border-bottom:1px solid black">
+                    <th style="width: 34%;"></th>
+                    <th style="width: auto;">Temprature</th>
+                    <th style="width: auto;">Feels like</th>
+                    <th style="width: auto;">Humidity</th>
+                    <th style="width: auto;">Wind speed</th>
+                    <th style="width: auto;">Wind degree</th>
+                    <th style="width: auto;">Sunrise</th>
+                    <th style="width: auto;">Sunset</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid black">
+                    <th scope="row" class="otherCities">Toronto</th>
+                    <td id ="temp1">1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+
+                  <tr style="border-bottom:1px solid black">
+                    <th scope="row" class="otherCities">Vancouver</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+
+                  <tr style="border-bottom:1px solid black">
+                    <th scope="row" class="otherCities">Edmonton</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid black">
+                    <th scope="row" class="otherCities">Winnipeg</th>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </main>
+        
+          <footer >
+            
+          </footer>
+        </div>       
+        </body>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src = "script.js"></script>
+  </body>
+</html>
